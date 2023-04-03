@@ -9,10 +9,6 @@ form.addEventListener("submit", (event)=>{
     // //remove intro paragraph
     const introP = document.querySelector(".introText")
     introP.remove()
-    //place footer down 
-    const footer = document.querySelector("div")
-    footer.style.position = `auto`;
-
     //get value of input and adjust it for instead of spaces it's a plus sign
     let input = event.target.textInput.value
 
@@ -26,8 +22,12 @@ form.addEventListener("submit", (event)=>{
             return input
         }}
 
-    // fetch data
-    let api = `http://www.omdbapi.com/?t=` + whiteSpaceOrNot(input) + `&apikey=${localStorage.getItem("key")}`
+    // fetch data after there has been something to search
+    if(!input){
+        //alert user of empty searches
+        window.alert("Search bar must not be empty.")
+    }else{
+        let api = `http://www.omdbapi.com/?t=` + whiteSpaceOrNot(input) + `&apikey=${localStorage.getItem("key")}`
 
         fetch(api)
         .then((response)=> response.json())
@@ -43,8 +43,8 @@ form.addEventListener("submit", (event)=>{
             const imgPoster = document.createElement("img")
             imgPoster.className = "imgPoster"
             imgPoster.setAttribute(`src`, `${result.Poster}`)
-            imgPoster.style.width = "500px"
-            imgPoster.style.height = "auto"
+            // imgPoster.style.width = "500px"
+            // imgPoster.style.height = "auto"
             main.prepend(imgPoster)
 
             //more info about movie link to second html
@@ -55,6 +55,10 @@ form.addEventListener("submit", (event)=>{
             imgPoster.after(moreInfo)
             console.log(result); 
         })
+        .catch((error)=>{
+            console.log("error")
+        })
+    }
     form.reset()
 })
 

@@ -36,12 +36,6 @@ window.addEventListener("load", (event) => {
             backButton.style.textDecoration = "none";
             backButton.style.backgroundColor = "#cac7ff"
 
-
-            // box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-            // font-size: 30px;
-            // color: rgb(53, 14, 96);
-            // text-decoration: none;
-
             //make button work
             // backButton.setAttribute = (`onclick`,`history.back()`)
             document.querySelector(".goBackButton").addEventListener("click", () => {
