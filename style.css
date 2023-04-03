@@ -5,17 +5,12 @@ body{
     margin: 0;
     text-align: center;
     width:100%;
-    /* display: grid; */
     justify-content: center;
-    /* grid-template-columns: repeat(4, 1fr); */
     background-color: rgba(0,8,51,0.9);
-
-
 }
 header{
     width: 100%;
     height: 270px;
-    /* padding: 5%; */
     background-image: linear-gradient(rgba(0,8,51,0.9), rgba(0,8,51,0.9)), url(./assets/movie-background.jpeg);
     display: grid;
     background-position: center;
@@ -24,14 +19,10 @@ header{
     justify-content: center;
     background-color: rgb(255, 196, 196);
     padding-bottom: 30px;
-    /* grid-column: 1 / 5; */
-
-
-
 }
 
 h1{
-    color: rgb(242, 240, 255);
+    color: aliceblue;
     font-size: 40px;
 }
 
@@ -58,7 +49,7 @@ form #textInput{
     color: #cac7ff;
 }
 
-form button img{
+form button #magnifier{
     width: 25px;
 }
 
@@ -72,23 +63,86 @@ form button{
     cursor: pointer;
 }
 
-/* main{
-    width: 70%;
-    height: 700px;
-    justify-content: center;
-    margin: 0 auto 0 auto;
-    margin-top: 30px;
+main{
+    display: grid;
+    height: auto;
+    margin: 30px auto 30px auto;
+}
+
+.introText{
     color: aliceblue;
+    height: 500px;
+}
+
+
+/* second html css */
+.imgPoster{
+    margin: 50px auto 0 auto;
+}
+
+.moreInfo{
+    padding: 20px;
+    font-size: 30px;
+    color: rgb(53, 14, 96);
+    text-decoration: none;
+    margin-bottom: 50px;
+}
+.moreInfo:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* SECOND HTML */
+.mainInfo{
+    display: grid;
+    height: auto;
+    width: 60%;
     background-color: #cac7ff;
-    
+    margin: 30px auto 30px auto;
+    grid-template-columns: 1fr 1fr;
+
+} 
+
+#title{
+    color: #060c30;
+}
+
+.information{
+    margin: 50px 70px 0px 0px;
+    text-align: left;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+br{
+    height: 30px;
+}
 
 
+.footer {
+    position: auto;
+    bottom: 0;
+    width: 100%;
+    height: 100px; 
+    background-color: rgb(12, 4, 50);
+    color: white;
+    text-align: center;
+  }
+  
+.goBackButton{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 50px auto 20px auto;
+    border: 0;
+    width: 80%;
+    padding: 20px;
+    font-size: 30px;
+    color: rgb(53, 14, 96);
+    text-decoration: none;
+    margin-bottom: 50px;
+
 }
-section{
-    grid-template-columns: 1/2;
-    display: block;
-    
+.goBackButton:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-article{
-    grid-template-columns: 2/3;  
-} */
