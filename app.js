@@ -6,9 +6,6 @@ const form = document.querySelector("form")
 form.addEventListener("submit", (event)=>{
     event.preventDefault();
 
-    // //remove intro paragraph
-    const introP = document.querySelector(".introText")
-    introP.remove()
     //get value of input and adjust it for instead of spaces it's a plus sign
     let input = event.target.textInput.value
 
@@ -27,7 +24,12 @@ form.addEventListener("submit", (event)=>{
         //alert user of empty searches
         window.alert("Search bar must not be empty.")
     }else{
+        
         let api = `http://www.omdbapi.com/?t=` + whiteSpaceOrNot(input) + `&apikey=${localStorage.getItem("key")}`
+
+         // //remove intro paragraph
+         const introP = document.querySelector(".introText")
+         introP.remove()
 
         fetch(api)
         .then((response)=> response.json())
