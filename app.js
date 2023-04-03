@@ -43,8 +43,6 @@ form.addEventListener("submit", (event)=>{
             const imgPoster = document.createElement("img")
             imgPoster.className = "imgPoster"
             imgPoster.setAttribute(`src`, `${result.Poster}`)
-            // imgPoster.style.width = "500px"
-            // imgPoster.style.height = "auto"
             main.prepend(imgPoster)
 
             //more info about movie link to second html

@@ -3,7 +3,6 @@ window.addEventListener("load", (event) => {
     const urlParams = new URLSearchParams(location.search);
     urlParams.get(`id`)
 
-        //http://www.omdbapi.com/?i=tt0317219
         let api = `http://www.omdbapi.com/?i=` +  urlParams.get(`id`) + `&apikey=${localStorage.getItem("key")}`
 
 
@@ -37,26 +36,16 @@ window.addEventListener("load", (event) => {
             backButton.style.backgroundColor = "#cac7ff"
 
             //make button work
-            // backButton.setAttribute = (`onclick`,`history.back()`)
             document.querySelector(".goBackButton").addEventListener("click", () => {
                 history.back();
               });
 
-
+            //img poster styles
             const imgPoster = document.createElement("img")
             imgPoster.className = "imgPoster"
             imgPoster.setAttribute(`src`, `${result.Poster}`)
             imgPoster.style.width = "270px"
             imgPoster.style.height = "auto"
             mainInfo.prepend(imgPoster)
-
-        console.log(result)
-
     })
-
-    
-//if location.search has id then get info from id
-console.log(urlParams);
-console.log(urlParams.get(`id`));
-
 });
